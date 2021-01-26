@@ -64,15 +64,21 @@ body {
 .form__label {
   font-size: 18px;
   display: block;
-  margin: 0 0 10px 0;
+  margin: 0 0 10px 0; 
 }
 
-.form__input {
+.form__input { 
   height: 50px;
   padding: 0 20px;
   border-radius: 5px;
   width: 100%;
   font-size: 18px;
+  transition: all .5s ease 0s;
+}
+
+/*Мы отключили всем инпутам аутлайн - делаем свой outline*/
+.form__input:focus {
+   box-shadow: 0 0 15px #7a956b;
 }
 
 textarea.form__input {
