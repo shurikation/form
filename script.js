@@ -26,13 +26,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				let result = await response.json();
 				alert(result.message);
 				formPreview.innerHTML = ""; //Очистка полей форм
-				form.reset(); //Очистка полей форм
+            form.reset(); //Очистка полей форм
+            form.classList.remove('_sending');
 			} else {
-				alert('Error response!');
-			}
-
-
+            alert('Error response!');
+            form.classList.remove('_sending');
+         }
+         
 		} else {
+         console.log(error);
 			alert('Zapolni!')
 		}
 	}
@@ -60,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
 					error++;
 				}
 			}
-		}
+      }
+      return error;
 	}
 
 
